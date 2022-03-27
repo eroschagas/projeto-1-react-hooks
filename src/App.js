@@ -1,7 +1,58 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { Component } from "react";
 
-function App() {
+class App extends Component {
+  /*     this.handlePClick = this.handlePClick.bind(this);
+   */
+  /* constructor(props) {
+    super(props);
+    this. */
+  state = {
+    name: "Pedro Pedroso",
+    counter: 0,
+  };
+  /* } */
+
+  handlePClick = () => {
+    this.setState({ name: "Júnior" });
+  };
+  /*   handlePClick() {
+    const { name } = this.state;
+    console.log(`p clickado ${name}`);
+  }
+ */
+  handleAClick = (event) => {
+    event.preventDefault();
+    const { counter } = this.state;
+    this.setState({ counter: counter + 1 });
+  };
+
+  render() {
+    const { name, counter } = this.state;
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p onClick={this.handlePClick}>
+            {name} {counter}
+          </p>
+          <a
+            onClick={this.handleAClick}
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Este é o link
+          </a>
+        </header>
+      </div>
+    );
+  }
+}
+
+/* function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -21,5 +72,5 @@ function App() {
     </div>
   );
 }
-
+ */
 export default App;
