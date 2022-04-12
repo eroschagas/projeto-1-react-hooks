@@ -12,7 +12,7 @@ describe("<TextInput />", () => {
   });
   it("should call handleChange function at each key press", () => {
     const fn = jest.fn();
-    render(<TextInput handleChange={fn} />);
+    render(<TextInput handleChange={fn} searchValue={"the value"} />);
     const input = screen.getByPlaceholderText(/type your search/i);
     const value = "the value";
     userEvent.type(input, value);
