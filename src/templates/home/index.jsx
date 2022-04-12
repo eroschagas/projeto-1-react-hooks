@@ -16,7 +16,7 @@ export const Home = () => {
 
   const noMorePosts = page + postsPerPage >= allPosts.length;
 
-  const filteredPosts = !!searchValue
+  const filteredPosts = searchValue
     ? allPosts.filter((post) => {
         return post.title.toLowerCase().includes(searchValue.toLowerCase());
       })
@@ -54,31 +54,8 @@ export const Home = () => {
       {filteredPosts.length > 0 && <Posts posts={filteredPosts} />}
       {filteredPosts.length === 0 && <p>Não existem posts</p>}
       <div className="button-container">
-        {!searchValue && (
-          <Button
-            text="Load more posts"
-            onLoadMorePosts={loadMorePosts}
-            disabled={noMorePosts}
-          />
-        )}
+        {!searchValue && <Button text="Load more posts" onLoadMorePosts={loadMorePosts} disabled={noMorePosts} />}
       </div>
     </section>
   );
 };
-
-/* export class Home2 extends Component {
-  state = {
-    posts: [],
-    allPosts: [],
-    page: 0,
-    postsPerPage: 6,
-    searchValue: "",
-  };
-
-  async componentDidMount() {
-    await this.loadPosts();
-  }
-
-  render() {}
-}
- */

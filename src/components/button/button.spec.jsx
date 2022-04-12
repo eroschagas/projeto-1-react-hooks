@@ -38,9 +38,7 @@ describe("<Button/>", () => {
   });
   it("should match snapshot", () => {
     const fn = jest.fn();
-    const { container } = render(
-      <Button text="load more" onLoadMorePosts={fn} disabled={false} />
-    );
+    const { container } = render(<Button text="load more" onLoadMorePosts={fn} disabled={false} />);
     expect(container.firstChild).toMatchSnapshot();
   });
 });

@@ -8,13 +8,8 @@ describe("<Postcard/>", () => {
   it("Should render PostCard correctly", () => {
     render(<PostCard {...props} />);
 
-    expect(screen.getByAltText(/title 1/i)).toHaveAttribute(
-      "src",
-      "img/img.png"
-    );
-    expect(
-      screen.getByRole("heading", { name: /Title 1/i })
-    ).toBeInTheDocument();
+    expect(screen.getByAltText(/title 1/i)).toHaveAttribute("src", "img/img.png");
+    expect(screen.getByRole("heading", { name: /Title 1/i })).toBeInTheDocument();
     expect(screen.getByText("body 1")).toBeInTheDocument();
   });
   it("Should match snapshot", () => {
