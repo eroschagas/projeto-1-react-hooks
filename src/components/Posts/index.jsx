@@ -12,5 +12,12 @@ export const Posts = ({ posts = [] }) => (
 );
 
 Posts.propTypes = {
-  posts: P.array,
+  posts: P.arrayOf(
+    P.shape({
+      title: P.string.isRequired,
+      body: P.string.isRequired,
+      id: P.number.isRequired,
+      cover: P.string.isRequired,
+    }),
+  ),
 };
