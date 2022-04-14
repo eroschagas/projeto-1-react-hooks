@@ -1,5 +1,6 @@
 import P from "prop-types";
 import "./styles.css";
+import React from "react";
 
 import { PostCard } from "../PostCard";
 

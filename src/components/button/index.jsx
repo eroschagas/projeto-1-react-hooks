@@ -1,5 +1,6 @@
 import P from "prop-types";
 import "./styles.css";
+import React from "react";
 
 export const Button = ({ text, onLoadMorePosts, disabled }) => (
   <button className="button" onClick={onLoadMorePosts} disabled={disabled}>
